@@ -11,7 +11,7 @@ setup(
     name="validkit",
     version="1.1.2",
     author="ValidKit",
-    author_email="support@validkit.com",
+    author_email="developers@validkit.com",
     description="Async Python SDK for ValidKit Email Verification API - Built for AI Agents",
     long_description=long_description,
     long_description_content_type="text/markdown",

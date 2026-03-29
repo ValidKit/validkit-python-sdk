@@ -27,7 +27,7 @@ from .exceptions import (
 
 from validkit._version import __version__  # noqa: E402
 __author__ = "ValidKit"
-__email__ = "support@validkit.com"
+__email__ = "developers@validkit.com"
 
 __all__ = [
     # Client

@@ -177,7 +177,7 @@ See [CONTRIBUTING.md](https://github.com/ValidKit/validkit-python-sdk/blob/main/
 
 ## Support
 
-[Docs](https://docs.validkit.com) -- [GitHub Issues](https://github.com/ValidKit/validkit-python-sdk/issues) -- support@validkit.com
+[Docs](https://docs.validkit.com) -- [GitHub Issues](https://github.com/ValidKit/validkit-python-sdk/issues) -- developers@validkit.com
 
 ## License
 
