@@ -9,7 +9,7 @@ with open("requirements.txt", "r", encoding="utf-8") as fh:
 
 setup(
     name="validkit",
-    version="1.1.2",
+    version="1.1.3",
     author="ValidKit",
     author_email="developers@validkit.com",
     description="Async Python SDK for ValidKit Email Verification API - Built for AI Agents",
