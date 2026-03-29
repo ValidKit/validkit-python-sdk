@@ -51,6 +51,21 @@ def test_version():
     assert __version__ == "1.1.2"
 
 
+def test_version_single_source_of_truth():
+    """All version references must come from _version.py."""
+    from validkit._version import __version__ as source_version
+    from validkit import __version__ as init_version
+    from validkit.config import ValidKitConfig
+
+    config = ValidKitConfig(api_key="test")
+
+    assert init_version == source_version, (
+        f"__init__.__version__ ({init_version}) != _version.__version__ ({source_version})"
+    )
+    assert config.headers["X-SDK-Version"] == source_version
+    assert source_version in config.user_agent
+
+
 def test_no_email_validator_required():
     """Verify the SDK works without the email-validator package.
 
