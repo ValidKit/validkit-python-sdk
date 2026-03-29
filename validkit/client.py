@@ -312,18 +312,30 @@ class AsyncValidKit:
         response = await self._request('GET', f'batch/{job_id}')
         return BatchJob(**response)
     
-    async def cancel_batch(self, job_id: str) -> bool:
+    async def cancel_batch(self, job_id: str) -> BatchJob:
         """Cancel a batch job
-        
+
         Args:
             job_id: Batch job ID
-        
+
         Returns:
-            True if cancelled successfully
+            Updated batch job information
         """
-        response = await self._request('POST', f'batch/{job_id}/cancel')
-        return response.get('success', False)
-    
+        response = await self._request('DELETE', f'batch/{job_id}')
+        return BatchJob(**response)
+
+    async def get_batch_results(self, job_id: str) -> BatchVerificationResult:
+        """Get results of a completed batch job
+
+        Args:
+            job_id: Batch job ID
+
+        Returns:
+            Batch verification results
+        """
+        response = await self._request('GET', f'batch/{job_id}/results')
+        return BatchVerificationResult(**response)
+
     async def stream_verify(
         self,
         emails: List[str],
