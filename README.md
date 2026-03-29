@@ -173,7 +173,7 @@ See [`examples/`](examples/):
 
 ## Contributing
 
-See [CONTRIBUTING.md](CONTRIBUTING.md).
+See [CONTRIBUTING.md](https://github.com/ValidKit/validkit-python-sdk/blob/main/CONTRIBUTING.md).
 
 ## Support
 
