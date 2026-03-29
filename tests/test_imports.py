@@ -48,7 +48,7 @@ def test_import_exceptions():
 
 def test_version():
     from validkit import __version__
-    assert __version__ == "1.1.1"
+    assert __version__ == "1.1.2"
 
 
 def test_no_email_validator_required():

@@ -2,6 +2,7 @@
 
 from typing import Optional, Dict, Any
 from dataclasses import dataclass, field
+from validkit._version import __version__
 
 
 @dataclass
@@ -18,7 +19,7 @@ class ValidKitConfig:
     rate_limit: Optional[int] = None  # requests per minute
     
     # Agent-specific settings
-    user_agent: str = "ValidKit-Python/1.1.1"
+    user_agent: str = f"ValidKit-Python/{__version__}"
     enable_compression: bool = True
     compact_format: bool = True  # Use token-efficient format by default
     
@@ -60,6 +61,8 @@ class ValidKitConfig:
         headers = {
             "User-Agent": self.user_agent,
             "X-API-Key": self.api_key,
+            "X-SDK-Version": __version__,
+            "X-SDK-Language": "python",
             "Content-Type": "application/json",
             "Accept": "application/json",
         }
