@@ -3,7 +3,7 @@
 from typing import Optional, List, Dict, Any, Union
 from datetime import datetime
 from enum import Enum
-from pydantic import BaseModel, Field, EmailStr, validator
+from pydantic import BaseModel, Field, validator
 
 
 class ResponseFormat(str, Enum):
@@ -58,7 +58,7 @@ class SMTPCheck(BaseModel):
 class EmailVerificationResult(BaseModel):
     """Full email verification result"""
     success: bool
-    email: EmailStr
+    email: str
     valid: bool
     
     # Detailed checks

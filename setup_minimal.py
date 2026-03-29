@@ -16,7 +16,7 @@ setup(
     python_requires=">=3.8",
     install_requires=[
         "aiohttp>=3.9.0",
-        "pydantic[email]>=2.0.0",
+        "pydantic>=2.0.0",
         "python-dotenv>=1.0.0",
         "typing-extensions>=4.8.0",
     ],
