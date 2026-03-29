@@ -3,7 +3,7 @@
 import asyncio
 import json
 import time
-from typing import Optional, Dict, Any, List, Union, Callable, AsyncIterator
+from typing import Optional, Dict, Any, List, Tuple, Union, Callable, AsyncIterator
 from contextlib import asynccontextmanager
 import aiohttp
 from aiohttp import ClientSession, ClientTimeout, TCPConnector

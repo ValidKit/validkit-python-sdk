@@ -18,7 +18,7 @@ class ValidKitConfig:
     rate_limit: Optional[int] = None  # requests per minute
     
     # Agent-specific settings
-    user_agent: str = "ValidKit-Python/1.0.0"
+    user_agent: str = "ValidKit-Python/1.1.1"
     enable_compression: bool = True
     compact_format: bool = True  # Use token-efficient format by default
     

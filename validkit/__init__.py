@@ -25,7 +25,7 @@ from .exceptions import (
     ConnectionError
 )
 
-__version__ = "1.0.1"
+__version__ = "1.1.1"
 __author__ = "ValidKit"
 __email__ = "support@validkit.com"
 
