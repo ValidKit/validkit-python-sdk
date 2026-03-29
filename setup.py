@@ -15,7 +15,7 @@ setup(
     description="Async Python SDK for ValidKit Email Verification API - Built for AI Agents",
     long_description=long_description,
     long_description_content_type="text/markdown",
-    url="https://pypi.org/project/validkit/",
+    url="https://github.com/ValidKit/validkit-python-sdk",
     packages=find_packages(),
     classifiers=[
         "Development Status :: 5 - Production/Stable",
@@ -49,7 +49,7 @@ setup(
         "Documentation": "https://docs.validkit.com/sdks/python",
         "PyPI": "https://pypi.org/project/validkit/",
         "Homepage": "https://validkit.com",
-        "Source": "https://github.com/validkit/python-sdk",
-        "Bug Tracker": "https://github.com/validkit/python-sdk/issues",
+        "Source": "https://github.com/ValidKit/validkit-python-sdk",
+        "Bug Tracker": "https://github.com/ValidKit/validkit-python-sdk/issues",
     },
 )

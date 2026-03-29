@@ -207,22 +207,6 @@ Check the `examples/` directory for more detailed examples:
 
 MIT License - see LICENSE file for details.
 
-## Error Handling
-
-The SDK provides detailed error information:
-
-```python
-from validkit import AsyncValidKit, ValidationError, RateLimitError
-
-async with AsyncValidKit(api_key="your_api_key") as client:
-    try:
-        result = await client.verify_email("invalid@email")
-    except ValidationError as e:
-        print(f"Validation error: {e}")
-    except RateLimitError as e:
-        print(f"Rate limit exceeded. Retry after: {e.retry_after}s")
-```
-
 ## Performance Tips
 
 1. **Use batch verification** for multiple emails (up to 10,000 per request)
@@ -238,8 +222,8 @@ We welcome contributions! Please see our [Contributing Guide](CONTRIBUTING.md) f
 
 ```bash
 # Clone the repository
-git clone https://github.com/validkit/python-sdk.git
-cd python-sdk
+git clone https://github.com/ValidKit/validkit-python-sdk.git
+cd validkit-python-sdk
 
 # Create virtual environment
 python -m venv venv
@@ -256,13 +240,9 @@ pytest
 
 - 📖 **Documentation**: https://docs.validkit.com
 - 🔧 **API Reference**: https://api.validkit.com/docs/openapi.json
-- 🐛 **Issues**: https://github.com/validkit/python-sdk/issues
+- 🐛 **Issues**: https://github.com/ValidKit/validkit-python-sdk/issues
 - 📧 **Email**: support@validkit.com
 - 💬 **Discord**: [Join our community](https://discord.gg/validkit)
-
-## License
-
-This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
 
 ---
 
