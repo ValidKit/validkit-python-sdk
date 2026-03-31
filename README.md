@@ -4,7 +4,7 @@
 [![Python Versions](https://img.shields.io/pypi/pyversions/validkit.svg)](https://pypi.org/project/validkit/)
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 
-Email validation for signup flows -- block junk without blocking `test+staging@example.com`. Async Python client with batch support up to 10K emails, automatic retries, and Pydantic models.
+Email validation for signup flows -- block junk without blocking `test+staging@example.com`. Sync and async clients, batch support up to 10K emails, automatic retries, and Pydantic models.
 
 ## Installation
 
@@ -17,30 +17,53 @@ Requires Python 3.8+.
 ## Quick Start
 
 ```python
+from validkit import ValidKit
+
+client = ValidKit("your_api_key")
+result = client.verify("user@example.com")
+print(result.v)  # True or False
+client.close()
+```
+
+Or with a context manager:
+
+```python
+from validkit import ValidKit
+
+with ValidKit("your_api_key") as client:
+    # Single email
+    result = client.verify("user@example.com")
+    print(result.v)
+
+    # Batch -- compact format by default
+    results = client.verify_batch([
+        "alice@company.com",
+        "bob@tempmail.com",
+        "not-an-email",
+    ])
+    for email, r in results.items():
+        print(f"{email}: valid={r.v}, disposable={r.d}")
+```
+
+### Async usage
+
+For high-throughput applications, use `AsyncValidKit` directly:
+
+```python
 import asyncio
 from validkit import AsyncValidKit
 
 async def main():
     async with AsyncValidKit(api_key="your_api_key") as client:
-        # Single email
         result = await client.verify_email("user@example.com")
-        print(result.valid)  # True
-
-        # Batch -- compact format by default
-        results = await client.verify_batch([
-            "alice@company.com",
-            "bob@tempmail.com",
-            "not-an-email",
-        ])
-        for email, r in results.items():
-            print(f"{email}: valid={r.v}, disposable={r.d}")
+        print(result.valid)
 
 asyncio.run(main())
 ```
 
 ## Features
 
-- **Async-native** -- aiohttp with connection pooling (100 connections default)
+- **Sync and async** -- `ValidKit` for scripts, `AsyncValidKit` for high-throughput
 - **Batch verification** -- up to 10,000 emails per call, chunked automatically
 - **Developer Pattern Intelligence** -- understands `test@`, `+addressing`, disposable domains
 - **Compact format** -- token-efficient responses (`v`, `d`, `r` fields) enabled by default

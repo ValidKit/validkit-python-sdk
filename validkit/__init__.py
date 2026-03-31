@@ -1,8 +1,9 @@
 """
 ValidKit Python SDK
-Async email verification for AI agents and high-volume applications
+Email verification for AI agents and high-volume applications
 """
 
+from .sync_client import ValidKit
 from .client import AsyncValidKit
 from .config import ValidKitConfig
 from .models import (
@@ -31,6 +32,7 @@ __email__ = "developers@validkit.com"
 
 __all__ = [
     # Client
+    "ValidKit",
     "AsyncValidKit",
     "ValidKitConfig",
     

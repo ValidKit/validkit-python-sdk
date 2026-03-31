@@ -2,7 +2,7 @@
 
 import pytest
 from unittest.mock import AsyncMock, patch
-from validkit import AsyncValidKit
+from validkit import AsyncValidKit, ValidKit
 from validkit.config import ValidKitConfig
 
 
@@ -19,6 +19,14 @@ def config(api_key):
 @pytest.fixture
 def client(api_key):
     return AsyncValidKit(api_key=api_key)
+
+
+@pytest.fixture
+def sync_client(mock_request):
+    """Create a sync ValidKit client with mocked HTTP."""
+    client = ValidKit(api_key="vk_test_abc123")
+    yield client
+    client.close()
 
 
 @pytest.fixture

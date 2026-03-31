@@ -5,6 +5,11 @@ from pydantic's EmailStr requiring the email-validator package.
 """
 
 
+def test_import_validkit_sync():
+    from validkit import ValidKit
+    assert ValidKit is not None
+
+
 def test_import_async_validkit():
     from validkit import AsyncValidKit
     assert AsyncValidKit is not None
@@ -48,7 +53,7 @@ def test_import_exceptions():
 
 def test_version():
     from validkit import __version__
-    assert __version__ == "1.1.3"
+    assert __version__ == "1.2.0"
 
 
 def test_version_single_source_of_truth():
