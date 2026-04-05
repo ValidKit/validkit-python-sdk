@@ -39,9 +39,9 @@ class TestConfigValidation:
 
     def test_user_agent_contains_version(self):
         config = ValidKitConfig(api_key="test")
-        assert "1.2.0" in config.user_agent
+        assert "1.2.1" in config.user_agent
 
     def test_headers_include_sdk_version(self):
         config = ValidKitConfig(api_key="test")
-        assert config.headers["X-SDK-Version"] == "1.2.0"
+        assert config.headers["X-SDK-Version"] == "1.2.1"
         assert config.headers["X-SDK-Language"] == "python"
