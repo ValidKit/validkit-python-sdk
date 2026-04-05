@@ -1,6 +1,6 @@
 """
 ValidKit Python SDK
-Email verification for AI agents and high-volume applications
+Email validation for signup flows.
 """
 
 from .sync_client import ValidKit

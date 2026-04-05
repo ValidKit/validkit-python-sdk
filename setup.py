@@ -9,10 +9,10 @@ with open("requirements.txt", "r", encoding="utf-8") as fh:
 
 setup(
     name="validkit",
-    version="1.2.0",
+    version="1.2.1",
     author="ValidKit",
     author_email="developers@validkit.com",
-    description="Python SDK for ValidKit Email Verification API - Built for AI Agents",
+    description="Python SDK for ValidKit — email validation for signup flows",
     long_description=long_description,
     long_description_content_type="text/markdown",
     url="https://github.com/ValidKit/validkit-python-sdk",
@@ -44,7 +44,7 @@ setup(
             "flake8>=6.0.0",
         ]
     },
-    keywords="email verification validation api async ai agents batch",
+    keywords="email verification validation api async signup",
     project_urls={
         "Documentation": "https://docs.validkit.com/sdks/python",
         "PyPI": "https://pypi.org/project/validkit/",
